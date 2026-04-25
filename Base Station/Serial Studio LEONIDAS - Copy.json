@@ -2,75 +2,81 @@
     "actions": [
         {
             "eol": "\n",
-            "icon": "Zoom Out",
-            "title": "TILT-",
-            "txData": "SBASE,-1"
-        },
-        {
-            "eol": "\n",
-            "icon": "Zoom In",
-            "title": "TILT+",
-            "txData": "SBASE,1"
-        },
-        {
-            "eol": "",
-            "icon": "Ladder",
-            "title": "",
-            "txData": ""
+            "icon": "Connected",
+            "title": "ARM MOTOR (Copy)",
+            "txData": "MARM"
         },
         {
             "eol": "\n",
             "icon": "Disconnected",
-            "title": "DISARM MOTOR",
+            "title": "DISARM MOTOR (Copy)",
             "txData": "DSRM"
         },
         {
             "eol": "\n",
-            "icon": "Connected",
-            "title": "ARM MOTOR",
-            "txData": "MARM"
-        },
-        {
-            "eol": "",
-            "icon": "Ladder",
-            "title": "",
-            "txData": ""
+            "icon": "Stop",
+            "title": "FORCE LANDING (Copy)",
+            "txData": "LND"
         },
         {
             "eol": "\n",
-            "icon": "Xbox B",
-            "title": "THR-",
-            "txData": "IMTR,-5"
+            "icon": "Close",
+            "title": "KILL MOTOR (WARNING) (Copy)",
+            "txData": "MOFF"
         },
         {
             "eol": "\n",
-            "icon": "Potentiometer",
-            "title": "MOTOR ON/OFF",
+            "icon": "Gears",
+            "title": "Motor Test (Copy)",
             "txData": "MTEST"
         },
         {
             "eol": "\n",
-            "icon": "Xbox A",
-            "title": "THR+",
-            "txData": "IMTR,5"
-        },
-        {
-            "eol": "",
-            "icon": "Ladder",
-            "title": "",
-            "txData": ""
+            "icon": "Services",
+            "title": "Servo Test (Copy)",
+            "txData": "STEST"
         },
         {
             "eol": "\n",
-            "icon": "Zoom Out",
-            "title": "REEL IN",
-            "txData": "SREEL,-1"
+            "icon": "Xbox A",
+            "title": "INC THRUST (Copy)",
+            "txData": "IMTR,5"
+        },
+        {
+            "eol": "\n",
+            "icon": "Disconnected",
+            "title": "DISARM MOTOR (Copy)",
+            "txData": "DSRM"
+        },
+        {
+            "eol": "\n",
+            "icon": "Xbox B",
+            "title": "DCR THRUST (Copy)",
+            "txData": "IMTR,-5"
+        },
+        {
+            "eol": "\n",
+            "icon": "Services",
+            "title": "Servo Test (Copy)",
+            "txData": "STEST"
         },
         {
             "eol": "\n",
             "icon": "Zoom In",
-            "title": "REEL OUT",
-            "txData": "SREEL,1"
+            "title": "TILT BASE+ (Copy)",
+            "txData": "SBASE,1"
+        },
+        {
+            "eol": "\n",
+            "icon": "Zoom Out",
+            "title": "TILT BASE- (Copy)",
+            "txData": "SBASE,-1"
+        },
+        {
+            "eol": "\n",
+            "icon": "Shutdown",
+            "title": "STOP TILTING (Copy)",
+            "txData": "SBASE,0"
         }
     ],
     "decoder": 0,
