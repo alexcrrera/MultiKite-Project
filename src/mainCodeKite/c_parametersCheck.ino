@@ -14,7 +14,7 @@ static_assert(TELEMETRY_FREQUENCY <= 100, "TELEMETRY_FREQUENCY too high");
 // ---- Baudrate whitelist ----
 constexpr bool validBaud =
   TELEM_BAUDRATE == 9600 || TELEM_BAUDRATE == 14400 || TELEM_BAUDRATE == 19200 || TELEM_BAUDRATE == 28800 || TELEM_BAUDRATE == 38400 || TELEM_BAUDRATE == 57600 || TELEM_BAUDRATE == 115200 || TELEM_BAUDRATE == 230400 || TELEM_BAUDRATE == 250000 || TELEM_BAUDRATE == 460800 || TELEM_BAUDRATE == 921600;
-
+  
 static_assert(validBaud, "Invalid TELEM_BAUDRATE");
 
 // ---- Motor limits ----

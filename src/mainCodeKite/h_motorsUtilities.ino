@@ -37,7 +37,10 @@ void handleMotor() {  // run servo control logic at MOTOR_FREQUENCY Hz
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 void motorWrite() {
-  const int outFinal = round(map(motor_output_percentage, 0.0, 100.0, ESC_LOW_PULSE, ESC_LOW_PULSE));
+  if(!motor_on || !motor_armed){
+      motor_output_percentage = 0;
+  }
+  const int outFinal = round(map(motor_output_percentage, 0.0, 100.0, ESC_LOW_PULSE, ESC_HIGH_PULSE));
   ESC.writeMicroseconds(outFinal);
 }
 
@@ -77,10 +80,10 @@ void reelServoWrite() {
     }
   }
   if (reel_in && !reel_out){
-    reel_servo_output_pulse = REEL_STOP_PULSE * (REEL_SPEED_DELTA_PERCENTAGE_REEL_IN+1);
+    reel_servo_output_pulse = REEL_STOP_PULSE * (1-REEL_SPEED_DELTA_PERCENTAGE_REEL_IN);
   }
   else if (reel_out && !reel_in){
-    reel_servo_output_pulse = REEL_STOP_PULSE * (1-REEL_SPEED_DELTA_PERCENTAGE_REEL_OUT);
+    reel_servo_output_pulse = REEL_STOP_PULSE * (1+REEL_SPEED_DELTA_PERCENTAGE_REEL_OUT);
   }
  // returnMessage = "REEL SERVO OUT: " + String(reel_servo_output_pulse) + "us";
   REEL.writeMicroseconds(round(reel_servo_output_pulse));

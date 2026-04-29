@@ -200,8 +200,9 @@ int checkHeaderTelem() {
 
 
   if (incomingDataTelemString.indexOf("MTEST") != -1) {
-    startTest();
     returnMessage = "MOTOR TEST INIT";
+    toggleTest();
+  
   }
 
   return (TelemIdentity);  // none

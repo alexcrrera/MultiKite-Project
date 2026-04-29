@@ -11,7 +11,7 @@ void setup() {
 ////////////////////////////////////////////====================SETUP END & MAIN LOOP START====================/////////////////////////////////////////
 
 void loop() {
-
+  checkStateSystem();
   handleTelemetry();
 
   handleReelServo();

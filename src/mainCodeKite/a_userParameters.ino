@@ -14,8 +14,8 @@ constexpr float MOTOR_MAX_PERCENTAGE = 50.0; //%
 constexpr float MOTOR_MIN_PERCENTAGE = 8.0; // % value
 
 ///////////////////////////////======== SPEED LIMITS  FOR REEL IN =============/////////////////////////////////////////
-constexpr float REEL_SPEED_DELTA_PERCENTAGE_REEL_IN = 0.05;
-constexpr float REEL_SPEED_DELTA_PERCENTAGE_REEL_OUT = 0.05; // this must be a positive value
+constexpr float REEL_SPEED_DELTA_PERCENTAGE_REEL_IN = 0.08;
+constexpr float REEL_SPEED_DELTA_PERCENTAGE_REEL_OUT = 0.06; // this must be a positive value
 constexpr int REEL_BURST_TIME_MILLIS = 300; //SEC
 
 ///////////////////////////////======== SPEED LIMITS  FOR REEL IN =============/////////////////////////////////////////
