@@ -1,0 +1,19 @@
+{
+  "widgets": [
+    {
+      "type": "label",
+      "inputs": [0],
+      "title": "Altitude"
+    },
+    {
+      "type": "plot",
+      "inputs": [1, 2],
+      "title": "IMU"
+    },
+    {
+      "type": "label",
+      "inputs": [3],
+      "title": "Battery"
+    }
+  ]
+}

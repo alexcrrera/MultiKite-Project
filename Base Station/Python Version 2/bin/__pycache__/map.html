@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AIS Vessel Map</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+
+html, body {
+    margin:0;
+    height:100%;
+}
+
+#map {
+    height:100%;
+    width:100%;
+}
+
+#status {
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.75);
+    color:white;
+    font-family:monospace;
+    font-size:12px;
+    padding:6px;
+    z-index:1000;
+    pointer-events:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="map"></div>
+<div id="status">Initializing...</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+const map = L.map("map").setView([39.8657, 2.5876], 8);
+
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    { maxZoom: 19 }
+).addTo(map);
+
+const vessels = {};
+let vesselCount = 0;
+let lastMessageTime = 0;
+
+const status = document.getElementById("status");
+
+const ws = new WebSocket("ws://localhost:8765");
+
+ws.onopen = function() {
+
+    status.textContent = "WebSocket connected | waiting for AIS data";
+
+};
+
+ws.onerror = function() {
+
+    status.textContent = "WebSocket error";
+
+};
+
+ws.onclose = function() {
+
+    status.textContent = "WebSocket closed";
+
+};
+
+ws.onmessage = function(event) {
+
+    const vessel = JSON.parse(event.data);
+
+    if(vessel.lat === null || vessel.lon === null) return;
+
+    const id = vessel.mmsi;
+
+    if(!(id in vessels)) {
+
+        vesselCount++;
+
+        const marker = L.marker([vessel.lat, vessel.lon]).addTo(map);
+
+        marker.bindPopup(
+            "MMSI: " + id +
+            "<br>Name: " + (vessel.name || "Unknown") +
+            "<br>SOG: " + (vessel.sog || 0) +
+            "<br>COG: " + (vessel.cog || 0)
+        );
+
+        vessels[id] = marker;
+
+    } else {
+
+        vessels[id].setLatLng([vessel.lat, vessel.lon]);
+
+    }
+
+    lastMessageTime = Date.now();
+
+    updateStatus(id);
+
+};
+
+
+function updateStatus(lastMmsi) {
+
+    const now = new Date();
+    const epoch = Math.floor(Date.now() / 1000);
+
+    const delay = ((Date.now() - lastMessageTime) / 1000).toFixed(1);
+
+    status.textContent =
+        "Tracked vessels: " + vesselCount +
+        " | Last MMSI: " + lastMmsi +
+        " | Time: " + now.toLocaleTimeString() +
+        " | Epoch: " + epoch +
+        " | Last update delay: " + delay + "s";
+
+}
+
+</script>
+
+</body>
+</html>
