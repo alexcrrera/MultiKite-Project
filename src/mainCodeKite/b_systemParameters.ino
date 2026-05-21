@@ -21,7 +21,7 @@
 #include <string.h>
 #include <String.h>
 #include <Servo.h>
-#include <elapsedMillis.h>  // timer, interrupt-based and non blocking, autowrapping
+#include <elapsedMillis.h>  // timer, interrupt-based and non blocking, autowrapping - @ https://docs.arduino.cc/libraries/elapsedmillis/
 
 TextParser commaParser(",");  // Delimiter is a comma followed by a space.
 
@@ -64,7 +64,7 @@ const int BASE_TILT_SERVO_FREQUENCY = 50; // 50 Hz is the most standard value
 
 Servo BASE_TILT; // object to control servo
 
-constexpr int BASE_TILT_LOW_PULSE = 1050;                                          // in microseconds
+constexpr int BASE_TILT_LOW_PULSE = 1000;                                          // in microseconds
 constexpr int BASE_TILT_HIGH_PULSE = 1940;                                         // in microsecond
 constexpr int BASE_TILT_STOP_PULSE = round((BASE_TILT_LOW_PULSE + BASE_TILT_HIGH_PULSE) / 2.0);  // in microseconds - midpoint of the PWM range
 

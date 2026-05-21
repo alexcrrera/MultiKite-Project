@@ -6,7 +6,7 @@ def buildSidebar(globalData):
 
     square = SmallSidebarSquare(globalData)
 
-    with ui.left_drawer().classes('bg-zinc-800 text-white'):
+    with ui.left_drawer().classes('bg-zinc-900 text-white'):
 
         with ui.column().classes('w-full h-full'):
 

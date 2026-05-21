@@ -72,12 +72,22 @@
             "title": "REEL OUT",
             "txData": "SREEL,1"
         },
+
+              
+              {
+            "eol": "",
+            "icon": "Ladder",
+            "title": "",
+            "txData": ""
+        },
+
         {
             "eol": "\n",
             "icon": "Xbox B",
             "title": "THR- FINE",
             "txData": "IMTR,-1.25"
         },
+  
         {
             "eol": "\n",
             "icon": "Xbox A",

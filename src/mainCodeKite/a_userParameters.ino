@@ -21,5 +21,5 @@ constexpr int REEL_BURST_TIME_MILLIS = 300; //SEC
 ///////////////////////////////======== SPEED LIMITS  FOR REEL IN =============/////////////////////////////////////////
 constexpr float BASE_TILT_SPEED_DELTA_PERCENTAGE_POSITIVE_TILT = 0.2;
 constexpr float BASE_TILT_SPEED_DELTA_PERCENTAGE_NEGATIVE_TILT = 0.2; // this must be a positive value
-constexpr int BASE_TILT_BURST_TIME_MILLIS = 200;
+constexpr int BASE_TILT_BURST_TIME_MILLIS = 400;
 
