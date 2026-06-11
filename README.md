@@ -162,7 +162,7 @@ Download the latest release from: [github.com/Serial-Studio/Serial-Studio/releas
 1. Launch Serial Studio.
 2. **File → Open Project** (or drag-and-drop) → select:
    ```
-   base.json
+   Base Station/base.json
    ```
    This loads the dashboard layout and all pre-configured action buttons.
 
@@ -218,20 +218,23 @@ These are the action buttons pre-configured in the Serial Studio project file. B
 |---|---|---|
 | ARM MOTOR | `MARM` | Sets `motor_armed = true` |
 | DISARM MOTOR | `DSRM` | Sets `motor_armed = false` |
-| KILL MOTOR (WARNING) | `MOFF` | Sets `motor_on = false`, output goes to zero immediately |
-| Motor Test | `MTEST` | Toggles test mode — motor must be armed first |
-| INC THRUST | `IMTR,5` | Adds 5 % to `motor_test_percentage` (clamped to `MOTOR_MAX_PERCENTAGE`) |
-| DCR THRUST | `IMTR,-5` | Subtracts 5 % (clamped to `MOTOR_MIN_PERCENTAGE`) |
-| TILT BASE+ | `SBASE,1` | Starts one tilt-up burst (`BASE_TILT_BURST_TIME_MILLIS` ms) |
-| TILT BASE- | `SBASE,-1` | Starts one tilt-down burst |
+| MOTOR ON/OFF | `MTEST` | Toggles test mode — motor must be armed first |
+| THR+ | `IMTR,2.5` | Adds 2.5 % to `motor_test_percentage` (clamped to `MOTOR_MAX_PERCENTAGE`) |
+| THR- | `IMTR,-2.5` | Subtracts 2.5 % (clamped to `MOTOR_MIN_PERCENTAGE`) |
+| THR+ FINE | `IMTR,1.25` | Adds 1.25 % |
+| THR- FINE | `IMTR,-1.25` | Subtracts 1.25 % |
+| TILT+ | `SBASE,1` | Starts one tilt-up burst (`BASE_TILT_BURST_TIME_MILLIS` ms) |
+| TILT- | `SBASE,-1` | Starts one tilt-down burst |
+| REEL IN | `SREEL,-1` | Reels in for one burst (`REEL_BURST_TIME_MILLIS` ms) |
+| REEL OUT | `SREEL,1` | Reels out for one burst |
 
 **Motor test procedure** (minimum safe sequence):
 
 ```
 1. ARM MOTOR        → status changes to ARMED
-2. Motor Test       → test mode starts, thrust at MOTOR_MIN_PERCENTAGE (8 %)
-3. INC THRUST       → increases by 5 % per press
-4. Motor Test       → toggles test mode off, motor stops
+2. MOTOR ON/OFF     → test mode starts, thrust at MOTOR_MIN_PERCENTAGE (8 %)
+3. THR+             → increases by 2.5 % per press (THR+ FINE for 1.25 % steps)
+4. MOTOR ON/OFF     → toggles test mode off, motor stops
 5. DISARM MOTOR     → returns to safe DISARMED state
 ```
 

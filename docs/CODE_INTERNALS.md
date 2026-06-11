@@ -343,7 +343,7 @@ All values in `a_userParameters.ino`. `c_parametersCheck.ino` enforces the bound
    ```
 
 3. **Add the field in Serial Studio**:
-   - Open `Base Station/Serial Studio LEONIDAS - Copy.json` in a text editor.
+   - Open `Base Station/base.json` in a text editor.
    - In the appropriate `"groups"` → `"datasets"` array, add a new entry:
    ```json
    {
