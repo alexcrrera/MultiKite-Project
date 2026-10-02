@@ -2,6 +2,29 @@
 
 Ground station setup guide: how to upload the firmware to an Arduino Mega and connect it to Serial Studio for live telemetry and control.
 
+
+<p align="center">
+  <img src="side view.png" width="75%" />
+</p>
+
+<p align="center">
+  <i>Assembly</i>
+</p>
+
+
+
+<p align="center">
+  <img src="test procedure.png" width="75%" />
+</p>
+
+<p align="center">
+  <i>Assembly</i>
+</p>
+
+
+
+The following is a detailed step-by-step tutorial for reproductability:
+
 ---
 
 ## Table of Contents
