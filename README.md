@@ -1,5 +1,9 @@
-# MultiKite Project
+# MULTIKITE PROJECT
+Lausanne, Switzerland | 2026
 
+Co-developed the take-off and landing mechanism for a multi-kite wind-energy prototype with another student.
+
+Automated take-off and landing sequences using an Arduino-based controller and operator interface, replacing manual actuation with high-level commands to reduce operator intervention and support safer, repeatable operation.
 
 
 <p align="center">
