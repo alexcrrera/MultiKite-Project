@@ -1,6 +1,5 @@
 # MultiKite Project
 
-Ground station setup guide: how to upload the firmware to an Arduino Mega and connect it to Serial Studio for live telemetry and control.
 
 
 <p align="center">
@@ -18,9 +17,10 @@ Ground station setup guide: how to upload the firmware to an Arduino Mega and co
 </p>
 
 <p align="center">
-  <i>Assembly</i>
+  
 </p>
 
+Ground station setup guide: how to upload the firmware to an Arduino Mega and connect it to Serial Studio for live telemetry and control.
 
 
 The following is a detailed step-by-step tutorial for reproductability:
